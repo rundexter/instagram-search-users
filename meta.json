@@ -15,8 +15,20 @@
     ],
     "outputs": [
         {
-            "id": "users",
-            "title":"Array of users"
+            "id": "username",
+            "title":"Username"
+        },
+        {
+            "id": "first_name",
+            "title":"First Name"
+        },
+        {
+            "id": "last_name",
+            "title":"Last Name"
+        },
+        {
+            "id": "profile_picture",
+            "title":"Picture"
         }
     ],
     "title": "Instagram Search Users" /* Required.A display name for the module */
