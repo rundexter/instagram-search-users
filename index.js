@@ -86,13 +86,15 @@ module.exports = {
      * Set acess token.
      *
      * @param dexter
-     * @param spotifyApi
      */
-    authParams: function (dexter, spotifyApi) {
+    authParams: function (dexter) {
 
-        if (dexter.environment('spotify_access_token')) {
+        if (dexter.environment('instagram_access_token')) {
 
-            spotifyApi.setAccessToken(dexter.environment('spotify_access_token'));
+            ig.use({access_token: dexter.environment('instagram_access_token')});
+        } else {
+
+            this.fail('A [instagram_access_token] environment is Required.');
         }
     },
 
@@ -114,22 +116,24 @@ module.exports = {
      * @param {AppData} dexter Container for all data used in this workflow.
      */
     run: function(step, dexter) {
-        ig.use({ access_token: dexter.environment('instagram_access_token') });
-
+        
+        this.authParams(dexter);
+        
         if (!step.input('q').first()) {
 
             this.fail('A [q] is Required for this module.');
+        } else {
+
+            ig.user_search(step.input('q').first(), this.prepareStringInputs(_.pick(step.inputs(), ['count'])), function (err, users) {
+
+                if (err) {
+
+                    this.fail(err);
+                } else {
+
+                    this.complete(this.pickResult({users: users}, globalPickResult));
+                }
+            }.bind(this));
         }
-
-        ig.user_search(step.input('q').first(), this.prepareStringInputs(_.pick(step.inputs(), ['count'])), function (err, users) {
-
-            if (err) {
-
-                this.fail(err);
-            } else {
-
-                this.complete(this.pickResult({users: users}, globalPickResult));
-            }
-        }.bind(this));
     }
 };
