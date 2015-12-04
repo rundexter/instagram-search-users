@@ -1,12 +1,13 @@
 {
-    "name": "instagram-search-users",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
-    "author": "Alexander",
-    "license": "ISC",
-    "private": true,
-    "dependencies": {
-        "lodash": "^3.9.3"
-    }
+  "name": "instagram-search-users",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "Alexander",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "instagram-node": "^0.5.8",
+    "lodash": "^3.10.1"
+  }
 }

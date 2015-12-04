@@ -4,23 +4,20 @@
 {
     //Required. Inputs the module expects.
     "inputs": [
-        //e.g.
-        /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "q",
+            "title":"Query String"
+        },
+        {
+            "id": "count",
+            "title":"Count"
         }
-        */
     ],
-    //Required. Outputs the module emits.
     "outputs": [
-      //e.g.
-      /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "users",
+            "title":"Array of users"
         }
-      */
     ],
     "title": "Instagram Search Users" /* Required.A display name for the module */
 }
