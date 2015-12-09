@@ -31,5 +31,6 @@
             "title":"Picture"
         }
     ],
+    "icon": "instagram",
     "title": "Instagram Search Users" /* Required.A display name for the module */
 }
