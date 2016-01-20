@@ -19,18 +19,18 @@
             "title":"Username"
         },
         {
-            "id": "first_name",
-            "title":"First Name"
-        },
-        {
-            "id": "last_name",
-            "title":"Last Name"
+            "id": "full_name",
+            "title":"Full Name"
         },
         {
             "id": "profile_picture",
             "title":"Picture"
         }
     ],
+    "providers": [{
+        "name": "instagram",
+        "scopes": [ "basic", "public_content" ]
+    }],
     "icon": "instagram",
     "title": "Instagram Search Users" /* Required.A display name for the module */
 }
